@@ -139,11 +139,12 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme solarized
 catch
 endtry
 
 set background=dark
+set number
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -380,3 +381,14 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+"Ctrl + A 保存
+imap <c-a> <esc> :wa <CR>
+map <c-a> :wa <CR>
+"Ctrl + C exit
+imap <c-c> <esc> :q <CR>
+map <c-c> :q <CR>
+"Ctrl + S vs, sp
+map <c-s> :vs <CR>
+map <c-n> :sp <CR>
+
